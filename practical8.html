@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Image Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+            letter-spacing: 2px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(0.8) contrast(1.2);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(102, 126, 234, 0.9) 0%,
+                rgba(118, 75, 162, 0.9) 50%,
+                rgba(255, 107, 107, 0.9) 100%
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        .overlay-content {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            transform: translateY(30px);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .overlay-content {
+            transform: translateY(0);
+        }
+
+        .overlay-content h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .overlay-content p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+            
+            .overlay-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .gallery-item {
+                height: 220px;
+            }
+        }
+
+        /* Shimmer animation */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .gallery-item:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.3),
+                transparent
+            );
+            animation: shimmer 1s infinite;
+            z-index: 2;
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="main-title">Image Gallery</h1>
+            <p class="subtitle">Hover to discover the magic</p>
+        </header>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Nature 1">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>Nature's Beauty</h3>
+                        <p>Discover the serenity of untouched landscapes</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop" alt="Cityscape">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>Urban Lights</h3>
+                        <p>Cityscapes that never sleep</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Ocean">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>Ocean Waves</h3>
+                        <p>The endless dance of the sea</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop" alt="Mountains">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>Mountain Majesty</h3>
+                        <p>Peaks that touch the sky</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop" alt="Forest">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>Forest Whisper</h3>
+                        <p>Where trees tell ancient stories</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400&h=300&fit=crop" alt="Sunset">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>Sunset Dreams</h3>
+                        <p>Golden hour perfection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
