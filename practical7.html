@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page | Ada Lovelace</title>
+    <style>
+        /* General Layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light grey background */
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            text-align: center;
+            border-bottom: 4px solid #3498db;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+
+        /* Header & Text Styling */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        /* Image Styling */
+        .img-box {
+            text-align: center;
+            border: 5px solid #fff;
+            outline: 1px solid #ddd;
+            padding: 10px;
+            background: #fafafa;
+            margin-bottom: 30px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* Layout Sections */
+        .content-section {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 20px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#legacy">Legacy</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Ada Lovelace</h1>
+            <p class="subtitle">The World's First Computer Programmer</p>
+        </header>
+
+        <section class="img-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Ada_Lovelace_portrait.jpg" alt="Portrait of Ada Lovelace">
+            <p><em>Ada Lovelace in her early years, envisioning the "poetical science."</em></p>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>The Visionary</h2>
+            <p>Augusta Ada King, Countess of Lovelace, was an English mathematician and writer. She is chiefly known for her work on Charles Babbage's proposed mechanical general-purpose computer, the <strong>Analytical Engine</strong>.</p>
+        </section>
+
+        <section id="timeline" class="content-section">
+            <h2>Life Timeline</h2>
+            <ul>
+                <li><strong>1815:</strong> Born in London to Lord Byron and Anne Isabella Milbanke.</li>
+                <li><strong>1833:</strong> Meets Charles Babbage, the "father of the computer."</li>
+                <li><strong>1842:</strong> Translates Luigi Menabrea's memoir on the Analytical Engine, adding her own extensive "Notes."</li>
+                <li><strong>1843:</strong> Her notes describe an algorithm for the Engine to calculate Bernoulli numbers, now considered the first computer program.</li>
+            </ul>
+        </section>
+
+        <section id="legacy" class="content-section">
+            <h2>Her Legacy</h2>
+            <blockquote cite="http://example.com">
+                "The Analytical Engine weaves algebraic patterns just as the Jacquard loom weaves flowers and leaves."
+            </blockquote>
+            <p>Ada's unique perspective—which she called "poetical science"—led her to realize that computers could do more than just crunch numbers; they could create music, art, and complex graphics.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Created with &hearts; for the Web Development Community.</p>
+    </footer>
+
+</body>
+</html>
