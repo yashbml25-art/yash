@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scholarship / Seminar Registration</title>
+</head>
+<body>
+
+    <h2>Scholarship & Seminar Registration Form</h2>
+
+    <form action="/submit_registration" method="POST">
+
+        <!-- Personal Information Fieldset -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+        </fieldset>
+
+        <!-- Seminar/Scholarship Selection Fieldset -->
+        <fieldset>
+            <legend>Registration Type</legend>
+            <p>Please select your registration type (choose one):</p>
+            
+            <input type="radio" id="scholarship" name="regType" value="scholarship">
+            <label for="scholarship">Scholarship Application</label><br>
+            
+            <input type="radio" id="seminar" name="regType" value="seminar">
+            <label for="seminar">Seminar Attendance Only</label><br>
+            
+            <input type="radio" id="both" name="regType" value="both">
+            <label for="both">Both Scholarship & Seminar</label>
+        </fieldset>
+
+        <!-- Academic Information Fieldset with Dropdown -->
+        <fieldset>
+            <legend>Academic Information</legend>
+            <label for="educationLevel">Highest Education Level:</label>
+            <select id="educationLevel" name="educationLevel">
+                <option value="highschool">High School</option>
+                <option value="associate">Associate's Degree</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="master">Master's Degree or Higher</option>
+            </select>
+            <br><br>
+            <label for="gpa">GPA (optional):</label>
+            <input type="number" id="gpa" name="gpa" step="0.01" min="0" max="4.0">
+        </fieldset>
+
+        <!-- Interests/Consent Fieldset with Checkboxes -->
+        <fieldset>
+            <legend>Interests & Consent</legend>
+            <p>Select areas of interest (check all that apply):</p>
+            
+            <input type="checkbox" id="interest1" name="interests" value="tech">
+            <label for="interest1">Technology</label><br>
+            
+            <input type="checkbox" id="interest2" name="interests" value="business">
+            <label for="interest2">Business</label><br>
+            
+            <input type="checkbox" id="interest3" name="interests" value="health">
+            <label for="interest3">Health Sciences</label><br>
+
+            <br>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I accept the [Terms and Conditions](link_to_terms.html)</label>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Register">
+
+    </form>
+
+</body>
+</html>
