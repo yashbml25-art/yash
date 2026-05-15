@@ -1,0 +1,193 @@
+  <!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Mini Bootstrap Website</title> 
+<!-- Bootstrap --> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+rel="stylesheet"> 
+<style> 
+body { 
+font-family: 'Segoe UI', sans-serif; 
+} 
+/* Gradient Navbar */ 
+.navbar { 
+background: linear-gradient(to right, #4facfe, #00f2fe); 
+} 
+/* Hero Section */ 
+.hero { 
+background: linear-gradient(135deg, #6a11cb, #2575fc); 
+color: white; 
+padding: 80px 20px; 
+Department of First Year, S.B.J.I.T.M.R., Nagpur  
+Web Designing Lab (N-VSCCM102P)  
+ 
+Department of First Year, S.B.J.I.T.M.R., Nagpur  
+} 
+ 
+/* Cards */ 
+.card:hover { 
+    transform: translateY(-8px); 
+    transition: 0.3s; 
+} 
+ 
+/* Footer */ 
+footer { 
+    background: #111; 
+    color: white; 
+    padding: 20px; 
+} 
+</style> 
+ 
+</head> 
+ 
+<body> 
+ 
+<!-- Navbar with Dropdown --> 
+<nav class="navbar navbar-expand-lg navbar-dark"> 
+  <div class="container"> 
+    <a class="navbar-brand fw-bold" href="#">MiniSite</a> 
+ 
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"> 
+      <span class="navbar-toggler-icon"></span> 
+    </button> 
+ 
+    <div class="collapse navbar-collapse" id="nav"> 
+      <ul class="navbar-nav ms-auto"> 
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li> 
+ 
+        <!-- Dropdown --> 
+        <li class="nav-item dropdown"> 
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a> 
+          <ul class="dropdown-menu"> 
+            <li><a class="dropdown-item" href="#">Web Design</a></li> 
+            <li><a class="dropdown-item" href="#">Development</a></li> 
+            <li><a class="dropdown-item" href="#">Marketing</a></li> 
+          </ul> 
+Web Designing Lab (N-VSCCM102P)  
+ 
+Department of First Year, S.B.J.I.T.M.R., Nagpur  
+        </li> 
+ 
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li> 
+      </ul> 
+    </div> 
+  </div> 
+</nav> 
+ 
+<!-- Breadcrumb --> 
+<div class="container mt-3"> 
+  <nav> 
+    <ol class="breadcrumb"> 
+      <li class="breadcrumb-item"><a href="#">Home</a></li> 
+      <li class="breadcrumb-item">Services</li> 
+      <li class="breadcrumb-item active">Web Design</li> 
+    </ol> 
+  </nav> 
+</div> 
+ 
+<!-- Hero Section --> 
+<section class="hero text-center"> 
+  <h1>Build. Innovate. Inspire.</h1> 
+  <p>Create modern responsive websites using Bootstrap</p> 
+ 
+  <!-- Modal Button --> 
+  <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#myModal"> 
+    Get Started 
+  </button> 
+</section> 
+ 
+<!-- Cards Section --> 
+<div class="container py-5"> 
+  <div class="row text-center"> 
+ 
+    <div class="col-md-4"> 
+      <div class="card p-3 shadow"> 
+        <h5>Design</h5> 
+        <p>Creative UI/UX solutions</p> 
+        <button class="btn btn-primary">Explore</button> 
+      </div> 
+    </div> 
+Web Designing Lab (N-VSCCM102P)  
+ 
+Department of First Year, S.B.J.I.T.M.R., Nagpur  
+ 
+    <div class="col-md-4"> 
+      <div class="card p-3 shadow"> 
+        <h5>Development</h5> 
+        <p>Modern web apps</p> 
+        <button class="btn btn-success">Start</button> 
+      </div> 
+    </div> 
+ 
+    <div class="col-md-4"> 
+      <div class="card p-3 shadow"> 
+        <h5>Marketing</h5> 
+        <p>Grow your business</p> 
+        <button class="btn btn-danger">Learn</button> 
+      </div> 
+    </div> 
+ 
+  </div> 
+</div> 
+ 
+<!-- Form Section --> 
+<div class="container mb-5"> 
+  <h3 class="text-center mb-3">Contact Form</h3> 
+ 
+  <form> 
+    <div class="row"> 
+      <div class="col-md-6 mb-3"> 
+        <input type="text" class="form-control" placeholder="Your Name"> 
+      </div> 
+ 
+      <div class="col-md-6 mb-3"> 
+        <input type="email" class="form-control" placeholder="Email"> 
+      </div> 
+    </div> 
+ 
+    <div class="mb-3"> 
+      <textarea class="form-control" rows="4" placeholder="Message"></textarea> 
+    </div> 
+ 
+    <button class="btn btn-primary w-100">Submit</button> 
+  </form> 
+Web Designing Lab (N-VSCCM102P)  
+ 
+Department of First Year, S.B.J.I.T.M.R., Nagpur  
+</div> 
+ 
+<!-- Modal --> 
+<div class="modal fade" id="myModal"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content"> 
+ 
+      <div class="modal-header"> 
+        <h5 class="modal-title">Welcome</h5> 
+        <button class="btn-close" data-bs-dismiss="modal"></button> 
+      </div> 
+ 
+      <div class="modal-body"> 
+        This is a Bootstrap modal popup. 
+      </div> 
+ 
+      <div class="modal-footer"> 
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+      </div> 
+ 
+    </div> 
+  </div> 
+</div> 
+ 
+<!-- Footer --> 
+<footer class="text-center"> 
+  <p>© 2026 MiniSite | All Rights Reserved</p> 
+</footer> 
+ 
+<!-- Bootstrap JS --> 
+<script 
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+ 
+</body> 
+</html>
