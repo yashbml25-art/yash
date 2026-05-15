@@ -1,0 +1,130 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>HTML5 APIs Demo</title>  
+<style> body 
+{  
+font-family: Arial, sans-serif;     background: linear
+gradient(to right, #4facfe, #00f2fe);     margin: 0;     
+padding: 20px;     color: #333;  
+} h1 
+{  
+text-align: center;     
+color: white; }  
+.container {    
+ display: grid;
+     grid-template-columns: 
+repeat(auto-fit, minmax(300px, 1fr));     gap: 20px;  
+}  
+.card {  
+background: white;     
+border-radius: 15px;     
+10px rgba(0,0,0,0.2);  
+text-align: center;  
+padding: 20px;     
+box-shadow: 0 4px 
+Department of First Year, S.B.J.I.T.M.R., Nagpur  
+Web Designing Lab (N-VSCCM102P)  
+} .box {     width: 100px;     
+height: 100px;     
+background: #ff6b6b;     
+margin: 10px auto;     line
+height: 100px;
+     color: 
+white;     font-weight: bold;     
+border-radius: 10px;     
+cursor: grab; } .dropzone {     
+width: 150px;     height: 
+150px;     border: 2px 
+dashed #333;     margin: 
+10px auto;     line-height: 
+150px;     border-radius: 
+10px;  
+} button {     padding: 
+10px 15px;     border: 
+none;     background: 
+#4facfe;     color: 
+white;     border-radius: 
+5px;     cursor: pointer; 
+} input {     padding: 
+8px;     width: 80%;     
+margin: 5px 0; }  
+</style> </head>  
+<body>  
+<h1>HTML5 APIs Demo</h1>  
+<div class="container">  
+<!-- Drag & Drop -->  
+<div class="card">  
+<h2>Drag & Drop</h2>  
+<div id="dragBox" class="box" draggable="true">Drag</div>  
+<div id="dropZone" class="dropzone">Drop Here</div>  
+</div>  
+<!-- Geolocation -->  
+<div class="card">  
+<h2>Geolocation</h2>  
+<button onclick="getLocation()">Get Location</button>  
+<p id="location"></p>  
+</div>  
+Department of First Year, S.B.J.I.T.M.R., Nagpur  
+Web Designing Lab (N-VSCCM102P)  
+<!-- Web Storage -->  
+<div class="card">  
+<h2>Web Storage</h2>  
+<input type="text" id="name" placeholder="Enter Name">  
+<br>  
+<button onclick="saveData()">Save</button>  
+<button onclick="loadData()">Load</button>  
+<button onclick="clearData()">Clear</button>  
+<p id="output"></p>  
+</div>  
+</div>  
+<script>  
+// Drag & Drop let dragBox = 
+document.getElementById("dragBox");  
+let dropZone = document.getElementById("dropZone");  
+dragBox.ondragstart = function(event) {     
+event.dataTransfer.setData("text", event.target.id);  
+};  
+dropZone.ondragover = function(event) {  
+event.preventDefault();  
+};  
+dropZone.ondrop = function(event) {     
+event.preventDefault();  
+let data = event.dataTransfer.getData("text");  
+event.target.appendChild(document.getElementById(data)); };  
+// Geolocation function getLocation() {     let output = 
+document.getElementById("location");  
+if (navigator.geolocation) {         
+navigator.geolocation.getCurrentPosition(  
+function(position) {                 
+output.innerHTML =   
+"Latitude: " + position.coords.latitude +  
+"<br>Longitude: " + position.coords.longitude;  
+},             function() {                 
+output.innerHTML = "Permission denied!";  
+}  
+Department of First Year, S.B.J.I.T.M.R., Nagpur  
+Web Designing Lab (N-VSCCM102P)  
+);  
+} else {  
+output.innerHTML = "Geolocation not supported";  
+}  
+}  
+// Web Storage function saveData() {     
+let name = 
+document.getElementById("name").value;     
+localStorage.setItem("username", name);  
+alert("Data Saved!");  
+}  
+function loadData() {  
+let name = localStorage.getItem("username");     
+document.getElementById("output").innerText = "Stored Name: " + name;  
+}  
+function clearData() {  
+localStorage.removeItem("username");     
+document.getElementById("output").innerText = "Data Cleared!";  
+}  
+</script>  
+</body>  
+</html> 
