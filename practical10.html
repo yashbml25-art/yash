@@ -1,0 +1,104 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>Frames Demo - Maps & External Pages</title>  
+<style>         
+margin: 0;             
+body {             
+font-family: 
+Arial, sans-serif;  
+}  
+header {             
+background: #2c3e50;             
+color: white;             
+text
+align: center;             
+padding: 15px;             
+size: 24px;  
+}  
+font
+Department of First Year, S.B.J.I.T.M.R., Nagpur   
+Web Designing Lab (N-VSCCM102P)   
+.container {             
+display: flex;             
+height: 90vh;         
+}  
+/* Left Frame (Menu) */         
+.left-frame {             
+width: 
+25%;             
+#34495e;             
+white;             
+}  
+background: 
+color: 
+padding: 20px;  
+.left-frame a {             
+display: block;             
+white;             
+text
+decoration: none;             
+margin: 10px 0;             
+padding: 10px;             
+background: #2c3e50;             
+border-radius: 5px;  
+}  
+color: 
+.left-frame a:hover {             
+background: #1abc9c;  
+}  
+/* Right Frame (Content Area) */         
+.right-frame {             
+width: 75%;  
+}  
+iframe {             
+width: 100%;             
+height: 100%;             
+border: none;  
+}  
+</style>  
+</head>  
+<body>  
+<header>  
+Maps & External Pages  
+</header>  
+Department of First Year, S.B.J.I.T.M.R., Nagpur   
+Web Designing Lab (N-VSCCM102P)   
+  
+ 
+Department of First Year, S.B.J.I.T.M.R., Nagpur   
+<div class="container">  
+  
+    <!-- Left Frame (Navigation Menu) -->  
+    <div class="left-frame">  
+        <h3>Menu</h3>  
+  
+        <a href="https://www.wikipedia.org" target="contentFrame">  
+            Open Wikipedia  
+        </a>  
+  
+        <a href="https://www.example.com" target="contentFrame">  
+            Open Example Site  
+        </a>  
+  
+        <a href="https://www.w3schools.com" target="contentFrame">  
+            Open W3Schools  
+        </a>  
+  
+        <!-- Google Maps Embed -->  
+        <a href="https://www.google.com/maps?q=Pune&output=embed" target="contentFrame">  
+            Show Pune Map  
+        </a>  
+    </div>  
+  
+    <!-- Right Frame (Content Display) -->  
+    <div class="right-frame">         <iframe name="contentFrame"              
+src="https://www.google.com/maps?q=Pune&output=embed">         
+</iframe>  
+    </div>  
+  
+</div>  
+  
+</body>  
+</html>
